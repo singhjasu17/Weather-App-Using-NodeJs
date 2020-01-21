@@ -12,7 +12,7 @@ app.use(express.static(directory_name));
 const viewsPath=path.join(__dirname,'../templates/views');
 app.set('views',viewsPath);
 app.set('view engine','hbs');
-
+var port = process.env.PORT || 3000;
 app.get('/about',(req,res)=>
 {
     res.render('about',{
@@ -89,7 +89,7 @@ app.get('*',(req,res)=>
     })
 })
 
-app.listen(3000,()=>
+app.listen(port,()=>
 {
     console.log('Server is listening at port 3000');
 })
